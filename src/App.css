@@ -1,0 +1,10 @@
+.container{
+    background: var(--Light-Gradient);
+    min-height: 100vh;
+    padding: 50px 100px;
+}
+@media (prefers-color-scheme: dark){
+ .container{
+    background: var(--Dark-Gradient);
+ }   
+}

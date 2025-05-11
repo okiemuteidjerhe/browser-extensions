@@ -1,0 +1,26 @@
+main{
+    display: grid;
+    gap: 40px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1{
+    color: var(--Neutral-900);
+}
+.btns{
+    display: flex;
+    gap: 10px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+}
+@media (prefers-color-scheme: dark){
+    h1{
+        color: var(--Neutral-0);
+    }
+}
