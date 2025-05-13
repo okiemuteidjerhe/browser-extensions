@@ -1,11 +1,11 @@
 .btn{
     padding: 8px 16px;
     border-radius: 20px;
+}
+.btnLight{
     background-color: var(--Neutral-0);
 }
-@media (prefers-color-scheme: dark){
-    .btn{
-        background-color: var(--Neutral-600);
-        color: var(--Neutral-200);
-    }
+.btnDark{
+    background-color: var(--Neutral-600);
+    color: var(--Neutral-200);
 }

@@ -7,7 +7,7 @@ main{
     align-items: center;
     justify-content: space-between;
 }
-h1{
+.h1Light{
     color: var(--Neutral-900);
 }
 .btns{
@@ -19,8 +19,6 @@ h1{
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 20px;
 }
-@media (prefers-color-scheme: dark){
-    h1{
-        color: var(--Neutral-0);
-    }
+.h1Dark{
+    color: var(--Neutral-0);
 }

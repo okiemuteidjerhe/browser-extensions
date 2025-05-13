@@ -10,8 +10,11 @@ export default function Header(props) {
                 <img src={Icon} />
             </div>
 
-            <button className={style.themeBtn}>
-                <img src={moon} alt='moon'/>
+            <button 
+            onClick={()=>props.handleMode()}
+            className={`${style.themeBtn} ${props.mode? style.themeBtnDark : style.themeBtnLight}`}
+            >
+                <img src={props.mode? Sun : moon} alt='moon'/>
             </button>
         </header>
     )

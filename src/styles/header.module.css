@@ -4,15 +4,22 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    box-shadow: 1px 1px 5px var(--Neutral-300);
     border-radius: 10px;
     margin-bottom: 45px;
 }
+.headerLight{
+    box-shadow: 1px 1px 5px var(--Neutral-300);
+}
+.headerDark{
+    box-shadow: 0px 0px 2px var(--Neutral-300);
+}
 .themeBtn{
-    background-color: var(--Neutral-100);
     padding: 10px;
     border-radius: 10px;
 }
-@media (prefers-color-scheme: dark){
-    
+.themeBtnLight{
+    background-color: var(--Neutral-100);
+}
+.themeBtnDark{
+    background-color: var(--Neutral-600);
 }

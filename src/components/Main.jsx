@@ -93,7 +93,7 @@ let data = [
   }
 ]
 
-export default function Main(){
+export default function Main(mainProps){
   //Handling the toggle and updating the state (view)
   const [extArr, setExtArr] = useState(data);
   function handleToggle(name){
@@ -107,6 +107,16 @@ export default function Main(){
       })
     })
   }
+
+  //Handling remove and updating the state 
+function handleRemove(name){
+  setExtArr(prev=>{
+    return prev.filter(item=>{
+      return item.name !== name
+    })
+  })
+}
+
   //Handling filtering and updating the state (view)
   const [filter, setFilter] = useState('All')
   const filteredItems = extArr.filter(item=>{
@@ -128,17 +138,32 @@ export default function Main(){
       description = {datum.description}
       logo = {datum.logo}
       isActive = {datum.isActive}
+      mode = {mainProps.mode}
       handleToggle = {handleToggle}
+      handleRemove = {handleRemove}
     />
   })
     return (
       <main>
         <div className={style.top}>
-          <h1>Extensions List</h1>
+          <h1 className={mainProps.mode? style.h1Dark : style.h1Light}>Extensions List</h1>
           <div className={style.btns}>
-            <Button text="All" isActive={filter==="All"} handleFiltering = {handleFiltering}/>
-            <Button text="Active" isActive={filter === "Active"} handleFiltering = {handleFiltering}/>
-            <Button text="Inactive" isActive={filter === "Inactive"} handleFiltering = {handleFiltering}/>
+            <Button 
+            text="All" 
+            isActive={filter==="All"} 
+            handleFiltering = {handleFiltering} mode= {mainProps.mode /*This prop called mode is coming from a prop of a similar name as the one in mainProps*/}
+            />
+            <Button 
+            text="Active" 
+            isActive={filter === "Active"} 
+            mode = {mainProps.mode}
+            handleFiltering = {handleFiltering}
+            />
+            <Button 
+            text="Inactive" 
+            isActive={filter === "Inactive"} 
+            mode = {mainProps.mode}
+            handleFiltering = {handleFiltering}/>
           </div>
         </div>
         <div className={style.cards}>
